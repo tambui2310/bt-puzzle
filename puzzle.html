@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div>
+		<img src="00.jpg" id="slide1" onclick="prev(1)" name="rand1" width="500" height="100">
+	</div>
+	<div>
+		<img src="11.jpg" id="slide2" onclick="prev(2)" name="rand2" width="500" height="100">
+	</div>
+	<div>
+		<img src="02.jpg" id="slide3" onclick="prev(3)" name="rand3" width="500" height="100">
+	</div>
+	<div>
+		<img src="24.jpg" id="slide4" onclick="prev(4)" name="rand4" width="500" height="100">
+	</div>
+	<div>
+		<img src="14.jpg" id="slide5" onclick="prev(5)" name="rand5" width="500" height="100">
+	</div>
+	<script type="text/javascript">	 
+
+       function prev(a) {
+        var setFlag = true;
+           switch(a){
+               case 1:
+               document.rand1.src =  Math.floor(Math.random() * 3) +"0.jpg";
+               break;
+               case 2:
+               document.rand2.src =  Math.floor(Math.random() * 3) +"1.jpg";
+               break;
+               case 3:
+               document.rand3.src =  Math.floor(Math.random() * 3) +"2.jpg";
+               break;
+               case 4:
+               document.rand4.src =  Math.floor(Math.random() * 3) +"3.jpg";
+               break;
+               case 5:
+               document.rand5.src =  Math.floor(Math.random() * 3) +"4.jpg";
+               break;
+               
+           }
+          if((document.rand1.src.substr(-6, 6) == "00.jpg" && 
+                document.rand2.src.substr(-6, 6) == "01.jpg" && 
+                document.rand3.src.substr(-6, 6) == "02.jpg" && 
+                document.rand4.src.substr(-6, 6) == "03.jpg" && 
+                document.rand5.src.substr(-6, 6) == "04.jpg")
+                ||
+               (document.rand1.src.substr(-6, 6) == "10.jpg" && 
+                document.rand2.src.substr(-6, 6) == "11.jpg" && 
+                document.rand3.src.substr(-6, 6) == "12.jpg" && 
+                document.rand4.src.substr(-6, 6) == "13.jpg" && 
+                document.rand5.src.substr(-6, 6) == "14.jpg")
+                ||
+               (document.rand1.src.substr(-6, 6) == "20.jpg" && 
+                document.rand2.src.substr(-6, 6) == "21.jpg" && 
+                document.rand3.src.substr(-6, 6) == "22.jpg" && 
+                document.rand4.src.substr(-6, 6) == "23.jpg" && 
+                document.rand5.src.substr(-6, 6) == "24.jpg")){
+                setFlag = false;
+            }
+            if (setFlag) {
+                document.getElementById("slide1").style.boxShadow = "";
+                document.getElementById("slide2").style.boxShadow = "";
+                document.getElementById("slide3").style.boxShadow = "";
+                document.getElementById("slide4").style.boxShadow = "";
+                document.getElementById("slide5").style.boxShadow = "";
+            }
+            else {
+                document.getElementById("slide1").style.boxShadow = "10px 20px 30px red";
+                document.getElementById("slide2").style.boxShadow = "10px 20px 30px red";
+                document.getElementById("slide3").style.boxShadow = "10px 20px 30px red";
+                document.getElementById("slide4").style.boxShadow = "10px 20px 30px red";
+                document.getElementById("slide5").style.boxShadow = "10px 20px 30px red";
+            }
+        }
+
+           
+       
+       
+
+	</script>
+
+</body>
+</html>
